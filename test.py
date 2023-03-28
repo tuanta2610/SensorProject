@@ -7,6 +7,8 @@ from sklearn.linear_model import LinearRegression
 import pickle
 from utils.visualization import *
 
+print("Testing")
+
 data = pd.read_csv('Humidity_Temp_Prediction.csv', sep = ";", parse_dates= ["date_time"])
 data["minute"] = data["date_time"].dt.minute # Minute in Hours
 data["hour"] = data["date_time"].dt.hour
@@ -74,3 +76,5 @@ LogDF["Alarm"] = (LogDF["true_temp"] < LogDF["conf_lower"]) | (LogDF["true_temp"
 print(LogDF.head())
 print("Alarm Time : ")
 print(LogDF[LogDF["Alarm"] == True])
+
+
